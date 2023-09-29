@@ -43,9 +43,15 @@ const config: Config = {
     },
     extend: {
       backgroundImage: {
+        // init
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        // background images
+        'home-background-pc': "url('/public/pc/home_backround.jpg')",
+        'home-background-sp': "url('/public/sp/home_backround.jpg')",
+        'contact-background-pc': "url('/public/pc/contact.jpg')",
+        'contact-background-sp': "url('/public/sp/contact.jpg')",
       },
       fontFamily: {
         display: 'noto-sans-jp, inter', // Adds a new `font-display` class
