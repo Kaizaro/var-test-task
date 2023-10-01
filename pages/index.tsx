@@ -1,4 +1,4 @@
-import {TextENBold2XL, TextENBoldLG, TextJABold2XL, TextJABold2XS, TextJABoldLG} from '@/src/components';
+import {TextENBold2XL, TextENBoldLG, TextJABold2XL, TextJABold2XS, TextJABoldLG} from '@/src/shared/components';
 import {HomePagePC} from './pagePC';
 // import backgroundImage from '../public/pc/home_backround@3x.jpg';
 
