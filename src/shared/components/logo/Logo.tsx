@@ -4,7 +4,7 @@ import Image from 'next/image';
 import {IDefaultFC, scaleHorizontal} from '../..';
 import {ILogo} from './Logo.types';
 
-import logoIcon from '../../../../public/common/Logo.png';
+import logoIcon from '../../../../public/common/Logo@3x.png';
 
 const Logo: IDefaultFC<ILogo> = ({size = scaleHorizontal(64)}) => {
   return (
