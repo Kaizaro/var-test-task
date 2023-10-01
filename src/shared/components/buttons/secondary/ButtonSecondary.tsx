@@ -1,6 +1,6 @@
-import {IDefaultFC} from '../../../types';
 import React, {useMemo} from 'react';
 import {IButton} from '../types';
+import {IDefaultFC} from '@/src/shared';
 
 const ButtonSecondary: IDefaultFC<IButton> = ({title = 'テキスト', size = 'large', handleButtonPress}) => {
   const className = useMemo(() => {
