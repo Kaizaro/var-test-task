@@ -1,4 +1,6 @@
-import type { Config } from 'tailwindcss'
+import type {Config} from 'tailwindcss'
+
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 const config: Config = {
   content: [
@@ -21,43 +23,50 @@ const config: Config = {
       'gray_100': '#EEEEEE',
       'white': '#FDFDFD',
     },
-    fontFamily: {
-      'ja': ['noto-sans-jp'],
-      'en': ['inter']
-    },
     fontSize: {
-      '2xs': '10px',
-      'xs': '12px',
-      'sm': '14px',
-      'md': '16px',
-      'lg': '18px',
-      'xl': '20px',
-      '2xl': '24px',
-      '3xl': '28px',
-      '4xl': '32px',
-      '5xl': '40px',
-      '6xl': '48px',
-      '7xl': '56px',
-      '8xl': '64px',
-      '9xl': '80px',
+      '2xs': ['10px', '15px'],
+      'xs': ['12px', '18px'],
+      'sm': ['14px', '21px'],
+      'md': ['16px', '24px'],
+      'lg': ['18px', '27px'],
+      'xl': ['20px', '30px'],
+      '2xl': ['24px', '36px'],
+      '3xl': ['28px', '42px'],
+      '4xl': ['32px', '48px'],
+      '5xl': ['40px', '60px'],
+      '6xl': ['48px', '72px'],
+      '7xl': ['56px', '84px'],
+      '8xl': ['64px', '96px'],
+      '9xl': ['80px', '120px'],
     },
+    // fontFamily: {
+    //   ja: ['Noto Sans JP'],
+    //   en: ['Inter var'],
+    // },
     extend: {
+      fontFamily: {
+        // ja: ['Noto Sans JP'],
+        // en: ['Inter'],
+        'ja-bold': ['NotoSansJPBold'],
+        'ja-medium': ['NotoSansJPMedium'],
+        'en-bold': ['InterBold'],
+        'en-medium': ['InterMedium'],
+      },
       backgroundImage: {
         // init
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         // background images
-        'home-background-pc': "url('/public/pc/home_backround.jpg')",
-        'home-background-sp': "url('/public/sp/home_backround.jpg')",
-        'contact-background-pc': "url('/public/pc/contact.jpg')",
-        'contact-background-sp': "url('/public/sp/contact.jpg')",
+        'home-background-pc': "url('/pc/home_backround@3x.jpg')",
+        'home-background-sp': "url('/sp/home_backround.jpg')",
+        'contact-background-pc': "url('/pc/contact.jpg')",
+        'contact-background-sp': "url('/sp/contact.jpg')",
       },
-      fontFamily: {
-        display: 'noto-sans-jp, inter', // Adds a new `font-display` class
-      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
 export default config

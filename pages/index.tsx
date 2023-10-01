@@ -1,13 +1,16 @@
-import Image from 'next/image'
-import {TextJABold2xs, TextJABoldXS} from '@/src/components/text';
+import {TextENBold2XL, TextENBoldLG, TextJABold2XL, TextJABold2XS, TextJABoldLG} from '@/src/components';
+// import backgroundImage from '../public/pc/home_backround@3x.jpg';
 
 export default function Home() {
   return (
-    <main className='min-h-screen flex-1 flex-col items-center py-[16px]'>
-      <div className='bg-home-background-pc'>
-        <TextJABold2xs>{'TEST'}</TextJABold2xs>
-        <TextJABoldXS>{'TEST'}</TextJABoldXS>
-      </div>
+    // <main className='min-h-screen flex-1 flex-col items-center py-[16px]' style={{backgroundImage:`url(${'pc/home_backround@3x.jpg'})`, backgroundRepeat:"no-repeat",backgroundSize:"contain"}}>
+    <main className='min-h-screen flex-1 flex-col items-center py-[16px] bg-home-background-pc'>
+      {/* <div style={{backgroundImage:`url(${backgroundImage.default})`, backgroundRepeat:"no-repeat",backgroundSize:"contain",  height:'1080px',width:'1920px', borderWidth: 1}}> */}
+        <p className='text-accent font-ja'>TEST let's see</p>
+      <p className='font-en-medium text-2xl text-accent font-medium'>TEST let's see</p>
+      <p className='font-en-bold text-4xl text-accent font-bold'>TEST let's see</p>
+      {/* <TextJABold2XL>TEST</TextJABold2XL> */}
+      {/* </div> */}
     </main>
   )
 

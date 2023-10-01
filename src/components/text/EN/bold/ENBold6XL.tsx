@@ -4,7 +4,7 @@ import {IText} from '../..';
 
 const TextENBold6XL: IDefaultFC<IText> = ({text = 'テキスト', ...props}) => {
   return (
-    <p className='text-6xl font-en font-bold text-black'>{props.children ?? text}</p>
+    <p className='text-black text-6xl font-en-bold font-bold'>{props.children ?? text}</p>
   );
 };
 
