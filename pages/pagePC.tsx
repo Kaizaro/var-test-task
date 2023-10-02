@@ -1,11 +1,13 @@
 import {HomeHeader} from '@/src/modules/home';
-import {scaleHorizontal} from '@/src/shared';
+import {HomeBodyText} from '@/src/modules/home/components/bodyText';
+import {getTailwindValue} from '@/src/shared';
 import React, {FC} from 'react';
 
 const HomePagePC: FC = () => {
   return (
-    <div className={`px-[${scaleHorizontal(320)}]`}>
+    <div className={'px-[8%]'}>
       <HomeHeader />
+      <HomeBodyText />
     </div>
   );
 };

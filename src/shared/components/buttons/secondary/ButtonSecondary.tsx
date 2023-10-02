@@ -6,11 +6,11 @@ const ButtonSecondary: IDefaultFC<IButton> = ({title = 'テキスト', size = 'l
   const className = useMemo(() => {
     switch (size) {
       case 'small':
-        return {button: 'px-[24px] py-[12px] bg-white rounded-[999px] min-w-[160px] items-center justify-center', text: 'text-black text-center'};
+        return {button: 'px-[24px] py-[12px] bg-white border border-black rounded-[999px] min-w-[160px] items-center justify-center', text: 'text-black text-center'};
       case 'medium':
-        return {button: 'px-[32px] py-[16px] bg-white rounded-[999px] min-w-[240px] items-center justify-center', text: 'text-black text-center'};
+        return {button: 'px-[32px] py-[16px] bg-white border border-black rounded-[999px] min-w-[240px] items-center justify-center', text: 'text-black text-center'};
       case 'large':
-        return {button: 'px-[48px] py-[24px] bg-white rounded-[999px] min-w-[320px] items-center justify-center', text: 'text-black text-center'};
+        return {button: 'px-[48px] py-[24px] bg-white border border-black rounded-[999px] min-w-[320px] items-center justify-center', text: 'text-black text-center'};
     }
   }, [size]);
 

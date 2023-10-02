@@ -33,7 +33,7 @@ const config: Config = {
       '3xl': ['28px', '42px'],
       '4xl': ['32px', '48px'],
       '5xl': ['40px', '60px'],
-      '6xl': ['48px', '72px'],
+      '6xl': ['3rem', '4.5rem'],
       '7xl': ['56px', '84px'],
       '8xl': ['64px', '96px'],
       '9xl': ['80px', '120px'],
@@ -62,10 +62,17 @@ const config: Config = {
         'contact-background-pc': "url('/pc/contact.jpg')",
         'contact-background-sp': "url('/sp/contact.jpg')",
       },
+      spacing: {
+        '96': '24rem',
+        '100': '25rem',
+        '128': '32rem',
+        '320': '80rem',
+      }
     },
   },
   plugins: [
     require('@tailwindcss/typography'),
+    // require('@tailwindcss-convert-px-to-rem'),
   ],
 }
 export default config
