@@ -1,0 +1,2 @@
+import {DEFAULT_LINE_HEIGHT_MULTIPLY} from '../constants/defaultValues';
+export const getLineHeight = (fontSize: number, lineHeightMultiply = DEFAULT_LINE_HEIGHT_MULTIPLY) => fontSize * lineHeightMultiply;
