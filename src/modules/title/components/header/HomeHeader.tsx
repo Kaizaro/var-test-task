@@ -22,9 +22,9 @@ const HomeHeader: FC = () => {
       <div className={'flex-row inline items-center'}>
         {HOME_HEADER_MENU_BUTTONS.map((menuButtonItem, index) => renderMenuItem(menuButtonItem, index))}
         <div className={'flex-row inline ml-10'}>
-          <ButtonPrimarySmall title={'お問い合わせ'} />
+          <ButtonPrimarySmall minWidth={183} title={'お問い合わせ'} />
           <div className={'ml-2 inline'}>
-            <ButtonSecondarySmall title={'資料ダウンロード'} />
+            <ButtonSecondarySmall minWidth={183} title={'資料ダウンロード'} isBorder />
           </div>
         </div>
       </div>
