@@ -12,7 +12,16 @@ const TextJABold2XS: IDefaultFC<IText> = ({
   ...props
 }) => {
   return (
-    <BaseText size={size} fontFamily={fontFamily} color={color} letterSpacing={letterSpacing} {...props}>{props.children}</BaseText>
+    <BaseText
+      size={size}
+      fontFamily={fontFamily}
+      fontWeight={fontWeight}
+      color={color}
+      lineHeight={lineHeight}
+      letterSpacing={letterSpacing}
+      {...props}>
+      {props.children}
+    </BaseText>
   );
 };
 

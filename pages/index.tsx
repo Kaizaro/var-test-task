@@ -1,18 +1,21 @@
-import {Suspense, lazy} from "react";
+import {Suspense, lazy} from 'react';
 
 export default function Home() {
   const TitlePageContent = lazy(() => import('../src/modules/title/page/titlePagePC'));
+  const ServicePageContent = lazy(() => import('../src/modules/service/page/ServicesPC'));
 
   return (
     // <main className='min-h-screen flex-1 flex-col items-center py-[16px]' style={{backgroundImage:`url(${'pc/home_backround@3x.jpg'})`, backgroundRepeat:"no-repeat",backgroundSize:"contain"}}>
-    <main className='flex w-[100%]'>
+    <main className="flex flex-col w-[100%]">
       <script src="http://localhost:8097" async />
       <Suspense>
         <TitlePageContent />
       </Suspense>
+      <Suspense>
+        <ServicePageContent />
+      </Suspense>
     </main>
-  )
-
+  );
 
   // return (
   //   <main
