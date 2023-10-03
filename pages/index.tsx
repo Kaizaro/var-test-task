@@ -3,6 +3,7 @@ import {Suspense, lazy} from 'react';
 export default function Home() {
   const TitlePageContent = lazy(() => import('../src/modules/title/page/titlePagePC'));
   const ServicePageContent = lazy(() => import('../src/modules/service/page/ServicesPC'));
+  const NewsPageContent = lazy(() => import('../src/modules/news/page/NewsPage'));
 
   return (
     // <main className='min-h-screen flex-1 flex-col items-center py-[16px]' style={{backgroundImage:`url(${'pc/home_backround@3x.jpg'})`, backgroundRepeat:"no-repeat",backgroundSize:"contain"}}>
@@ -13,6 +14,9 @@ export default function Home() {
       </Suspense>
       <Suspense>
         <ServicePageContent />
+      </Suspense>
+      <Suspense>
+        <NewsPageContent />
       </Suspense>
     </main>
   );
