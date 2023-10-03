@@ -4,7 +4,7 @@ import {ServicePageHeader} from '../components/servicePageHeader/ServicePageHead
 
 const ServicesPagePC: IDefaultFC = () => {
   return (
-    <div className="min-h-[100%] flex-col align-center px-[20.94%]">
+    <div className="min-h-[100%] flex flex-col align-center px-[20.94%] py-[80px] bg-black">
       <ServicePageHeader />
     </div>
   );
