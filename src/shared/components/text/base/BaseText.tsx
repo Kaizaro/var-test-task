@@ -1,39 +1,44 @@
 import {IDefaultFC, IText} from '@/src/shared';
 import classNames from 'classnames';
-import React, {useMemo} from 'react';
+import React, {CSSProperties, useMemo} from 'react';
 
 const BaseText: IDefaultFC<IText> = ({text = 'テキスト', ...props}) => {
-  const textClassName = useMemo(() => {
-    let defaultClassName = classNames('inline');
+  const textStyle = useMemo(() => {
+    let defaultStyle = {
+      display: 'inline'
+    } as CSSProperties;
     if (props.color) {
-      defaultClassName = classNames(defaultClassName, `text-${props.color}`);
+      defaultStyle.color = props.color;
     }
     if (props.size) {
-      defaultClassName = classNames(defaultClassName, `text-[${props.size}]`);
+      defaultStyle.fontSize = props.size;
     }
     if (props.fontFamily) {
-      defaultClassName = classNames(defaultClassName, `font-${props.fontFamily}`);
+      defaultStyle.fontFamily = props.fontFamily;
     }
     if (props.fontWeight) {
-      defaultClassName = classNames(defaultClassName, `font-${props.fontWeight}`);
+      defaultStyle.fontWeight = props.fontWeight;
     }
     if (props.lineHeight) {
-      defaultClassName = classNames(defaultClassName, `leading-[${props.lineHeight}]`);
+      defaultStyle.lineHeight = props.lineHeight;
     }
     if (props.letterSpacing) {
-      defaultClassName = classNames(defaultClassName, `tracking-[${props.letterSpacing}]`);
+      defaultStyle.letterSpacing = props.letterSpacing;
     }
     if (props.isUnderlined) {
-      defaultClassName = classNames(defaultClassName, 'underline');
+      defaultStyle.textDecorationLine = 'underline';
     }
-    if (props.customClassName) {
-      defaultClassName = classNames(defaultClassName, props.customClassName);
+    if (props.customStyle) {
+      defaultStyle = {...defaultStyle, ...props.customStyle}
     }
-
-    return defaultClassName;
-  }, [props.color, props.customClassName, props.fontFamily, props.fontWeight, props.isUnderlined, props.letterSpacing, props.lineHeight, props.size]);
+    console.log('@SEAN => defaultStyle', defaultStyle);
+    // return defaultClassName;
+    return defaultStyle;
+  }, [props.color, props.fontFamily, props.fontWeight, props.isUnderlined, props.letterSpacing, props.lineHeight, props.size, props.customStyle]);
 
   return (
-    <p className={textClassName}>{props.children ?? text}</p>
+    <p style={textStyle}>{props.children ?? text}</p>
   );
 };
+
+export {BaseText};

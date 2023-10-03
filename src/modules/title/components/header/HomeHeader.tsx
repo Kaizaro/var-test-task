@@ -6,7 +6,7 @@ import {HOME_HEADER_MENU_BUTTONS, IHomeHeaderMenuButton} from '.';
 const HomeHeader: FC = () => {
   const renderMenuItem = useCallback<(menuButtonItem: IHomeHeaderMenuButton, index: number) => React.JSX.Element>((menuButtonItem, index) => (
     <a key={`${menuButtonItem.title}_${index}`} href={menuButtonItem.route} className={index === 0 ? '' : 'ml-6'}>
-        <TextJABoldMD>{menuButtonItem.title}</TextJABoldMD>
+        <TextJABoldMD color='#C63131'>{menuButtonItem.title}</TextJABoldMD>
       </a>
   ), []);
 
