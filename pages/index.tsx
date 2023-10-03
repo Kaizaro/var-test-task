@@ -5,7 +5,7 @@ export default function Home() {
 
   return (
     // <main className='min-h-screen flex-1 flex-col items-center py-[16px]' style={{backgroundImage:`url(${'pc/home_backround@3x.jpg'})`, backgroundRepeat:"no-repeat",backgroundSize:"contain"}}>
-    <main className='flex'>
+    <main className='flex w-[100%]'>
       <script src="http://localhost:8097" async />
       <Suspense>
         <TitlePageContent />

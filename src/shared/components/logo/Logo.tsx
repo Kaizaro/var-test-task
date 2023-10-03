@@ -8,7 +8,9 @@ import logoIcon from '../../../../public/common/Logo@3x.png';
 
 const Logo: IDefaultFC<ILogo> = ({size = 64}) => {
   return (
-    <Image src={logoIcon} alt={'Logo'} width={size} height={size} className='inline' />
+    <div className='inline'>
+      <Image src={logoIcon} alt={'Logo'} width={size} height={size} className='inline' />
+    </div>
   );
 };
 
