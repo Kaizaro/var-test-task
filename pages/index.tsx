@@ -1,15 +1,15 @@
-import {TextENBold2XL, TextENBoldLG, TextJABold2XL, TextJABold2XS, TextJABoldLG} from '@/src/shared/components';
-import {HomePagePC} from './pagePC';
-// import backgroundImage from '../public/pc/home_backround@3x.jpg';
+import {Suspense, lazy} from "react";
 
 export default function Home() {
+  const TitlePageContent = lazy(() => import('../src/modules/title/page/titlePagePC'));
+
   return (
     // <main className='min-h-screen flex-1 flex-col items-center py-[16px]' style={{backgroundImage:`url(${'pc/home_backround@3x.jpg'})`, backgroundRepeat:"no-repeat",backgroundSize:"contain"}}>
-    <main className='min-h-screen flex-1 flex-col items-center py-[16px] bg-home-background-pc bg-cover'>
-      {/* <div style={{backgroundImage:`url(${backgroundImage.default})`, backgroundRepeat:"no-repeat",backgroundSize:"contain",  height:'1080px',width:'1920px', borderWidth: 1}}> */}
-        <HomePagePC />
-      {/* <TextJABold2XL>TEST</TextJABold2XL> */}
-      {/* </div> */}
+    <main className='flex'>
+      <script src="http://localhost:8097" async />
+      <Suspense>
+        <TitlePageContent />
+      </Suspense>
     </main>
   )
 

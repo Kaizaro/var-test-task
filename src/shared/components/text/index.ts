@@ -1,3 +1,3 @@
 export * from './EN';
 export * from './JA';
-export * from './types';
+export * from './base';

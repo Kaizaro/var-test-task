@@ -1,6 +1,6 @@
 import {IDefaultFC} from '@/src/types';
 import React from 'react';
-import {IText} from '../../types';
+import {IText} from '../../base/types';
 
 const TextJABold2XS: IDefaultFC<IText> = ({text = 'テキスト', ...props}) => {
   return (
