@@ -1,11 +1,11 @@
 import React from 'react';
-import {IButton, IDefaultFC, TextJABoldXL} from '@/src/shared';
+import {BaseButtonPrimary, IButton, IDefaultFC, TextJABoldXL} from '@/src/shared';
 
-const ButtonPrimaryLarge: IDefaultFC<IButton> = ({title = 'テキスト', handleButtonPress}) => {
+const ButtonPrimaryLarge: IDefaultFC<IButton> = (props) => {
   return (
-    <button className='px-[24px] py-[12px] bg-accent rounded-[999px] min-w-[160px] items-center justify-center inline' onClick={handleButtonPress}>
-      <TextJABoldXL>{title}</TextJABoldXL>
-    </button>
+    <BaseButtonPrimary size={'large'} minWidth={320} paddingVertical={24} paddingHorizontal={48} {...props}>
+      <TextJABoldXL>{props.title}</TextJABoldXL>
+    </BaseButtonPrimary>
   );
 };
 

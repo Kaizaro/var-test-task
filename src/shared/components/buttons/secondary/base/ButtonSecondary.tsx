@@ -2,14 +2,14 @@ import React, {CSSProperties, useMemo} from 'react';
 import {IButton} from '../../types';
 import {COLORS, IDefaultFC} from '@/src/shared';
 
-const BaseButtonPrimary: IDefaultFC<IButton> = ({
+const BaseButtonSecondary: IDefaultFC<IButton> = ({
   handleButtonPress,
   paddingVertical,
   paddingHorizontal,
   customStyles,
   children,
   minWidth = '100%',
-  bgColor = COLORS.accent,
+  bgColor = COLORS.white,
   isBorder = false,
   borderColor = COLORS.black,
 }) => {
@@ -55,4 +55,4 @@ const BaseButtonPrimary: IDefaultFC<IButton> = ({
   );
 };
 
-export {BaseButtonPrimary};
+export {BaseButtonSecondary};
