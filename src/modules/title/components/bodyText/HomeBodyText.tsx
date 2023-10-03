@@ -4,7 +4,7 @@ import {HomeBodyTextRegular, HomeBodyTextTitle} from './HomeBodyText.content';
 
 const HomeBodyText: IDefaultFC = () => {
   return (
-    <div className='self-center mt-[8%]'>
+    <div className='self-start mt-[8%]'>
       <div className='w-[33.875rem]'>
         <TextJABold6XL>{HomeBodyTextTitle}</TextJABold6XL>
       </div>
