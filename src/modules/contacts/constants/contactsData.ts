@@ -1,4 +1,4 @@
-import {COLORS} from '@/src/shared';
+import {COLORS, URL_ROUTES, goToOtherUrl} from '@/src/shared';
 import {IContactsBadgeItem} from '../components/contactsBadgeItem';
 
 export const CONTACTS_DATA = [
@@ -10,6 +10,7 @@ export const CONTACTS_DATA = [
     bgColor: COLORS.gray_900,
     buttonType: 'primary',
     buttonTitle: 'お問い合わせ',
+    handleButtonPress: () => goToOtherUrl(URL_ROUTES.CONTACT),
   },
   {
     enTitle: 'DOCUMENT',
@@ -18,5 +19,6 @@ export const CONTACTS_DATA = [
     bgColor: COLORS.gray_700,
     buttonType: 'secondary',
     buttonTitle: '資料ダウンロード',
+    handleButtonPress: () => goToOtherUrl(URL_ROUTES.DOWNLOAD),
   },
 ] as IContactsBadgeItem[];

@@ -1,11 +1,12 @@
-import {Suspense, lazy} from 'react';
+import dynamic from 'next/dynamic';
+import {Suspense} from 'react';
 
 export default function Home() {
-  const TitlePageContent = lazy(() => import('../src/modules/title/page/titlePage'));
-  const ServicePageContent = lazy(() => import('../src/modules/service/page/ServicesPage'));
-  const NewsPageContent = lazy(() => import('../src/modules/news/page/NewsPage'));
-  const ContactsPageContent = lazy(() => import('../src/modules/contacts/page/ContactsPage'));
-  const FooterPageContent = lazy(() => import('../src/modules/footerPage/page/FooterPage'));
+  const TitlePageContent = dynamic(() => import('../src/modules/title/page/titlePage'));
+  const ServicePageContent = dynamic(() => import('../src/modules/service/page/ServicesPage'));
+  const NewsPageContent = dynamic(() => import('../src/modules/news/page/NewsPage'));
+  const ContactsPageContent = dynamic(() => import('../src/modules/contacts/page/ContactsPage'));
+  const FooterPageContent = dynamic(() => import('../src/modules/footerPage/page/FooterPage'));
 
   return (
     <main className="flex flex-col w-[100%]">

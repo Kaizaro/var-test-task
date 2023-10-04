@@ -1,4 +1,13 @@
-import {ButtonPrimaryLarge, ButtonSecondaryLarge, COLORS, IDefaultFC, Logo, TextJABoldMD} from '@/src/shared';
+import {
+  ButtonPrimaryLarge,
+  ButtonSecondaryLarge,
+  COLORS,
+  IDefaultFC,
+  Logo,
+  TextJABoldMD,
+  URL_ROUTES,
+  goToOtherUrl,
+} from '@/src/shared';
 import React, {useCallback} from 'react';
 import {HOME_HEADER_MENU_BUTTONS, IHomeHeaderMenuButton} from '..';
 import Image from 'next/image';
@@ -6,6 +15,14 @@ import closeIcon from '../../../../../public/common/close@3x.png';
 import {IMobileMenuModal} from './MobileMenuModal.types';
 
 const MobileMenuModal: IDefaultFC<IMobileMenuModal> = ({isVisible, handleCloseMenu}) => {
+  const handleMainButtonPress = useCallback(() => {
+    goToOtherUrl(URL_ROUTES.CONTACT);
+  }, []);
+
+  const handleSecondaryButtonPress = useCallback(() => {
+    goToOtherUrl(URL_ROUTES.DOWNLOAD);
+  }, []);
+
   const renderMenuItem = useCallback<(menuButtonItem: IHomeHeaderMenuButton, index: number) => React.JSX.Element>(
     (menuButtonItem, index) => (
       <a key={`${menuButtonItem.title}_${index}`} href={menuButtonItem.route} className={index === 0 ? '' : 'mt-6'}>
@@ -30,9 +47,13 @@ const MobileMenuModal: IDefaultFC<IMobileMenuModal> = ({isVisible, handleCloseMe
         <div className="mt-[40%] flex flex-col">
           {HOME_HEADER_MENU_BUTTONS.map((menuButtonItem, index) => renderMenuItem(menuButtonItem, index))}
           <div className={'mt-10'}>
-            <ButtonPrimaryLarge minWidth={'100%'} title={'お問い合わせ'} />
+            <ButtonPrimaryLarge minWidth={'100%'} title={'お問い合わせ'} handleButtonPress={handleMainButtonPress} />
             <div className={'mt-2'}>
-              <ButtonSecondaryLarge minWidth={'100%'} title={'資料ダウンロード'} />
+              <ButtonSecondaryLarge
+                minWidth={'100%'}
+                title={'資料ダウンロード'}
+                handleButtonPress={handleSecondaryButtonPress}
+              />
             </div>
           </div>
         </div>

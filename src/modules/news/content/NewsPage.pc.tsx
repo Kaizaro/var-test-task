@@ -1,4 +1,4 @@
-import {ButtonPrimaryLarge, ButtonPrimaryMedium, IDefaultFC} from '@/src/shared';
+import {ButtonPrimaryLarge, ButtonPrimaryMedium, IDefaultFC, URL_ROUTES, goToOtherUrl} from '@/src/shared';
 import React, {useCallback, useMemo} from 'react';
 import {NewsPageHeader} from '../components/newsPageHeader/NewsPageHeader';
 import {chunk} from 'lodash';
@@ -8,6 +8,10 @@ import {NewsCard} from '../components/newsCard';
 
 const NewsPagePC: IDefaultFC = () => {
   const newsChunk = useMemo(() => chunk(NEWS_ARTICLES, 3), []);
+
+  const handleLookNewsButtonPress = useCallback(() => {
+    goToOtherUrl(URL_ROUTES.NEWS);
+  }, []);
 
   const renderNewsArticle = useCallback<(newsArticleItem: INewsArticle, index: number) => React.JSX.Element>(
     (newsArticleItem, index) => {
@@ -42,7 +46,7 @@ const NewsPagePC: IDefaultFC = () => {
       <NewsPageHeader />
       <div className={'py-[80px]'}>{newsChunk.map((item, index) => renderNewsArticleRow(item, index))}</div>
       <div className="py-[80px] self-center items-center">
-        <ButtonPrimaryMedium>{'一覧を見る'}</ButtonPrimaryMedium>
+        <ButtonPrimaryMedium handleButtonPress={handleLookNewsButtonPress}>{'一覧を見る'}</ButtonPrimaryMedium>
       </div>
     </div>
   );

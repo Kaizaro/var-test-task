@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {HomeHeaderMobile} from '@/src/modules/title';
-import {HomeBodyText, HomeBodyTextMobile} from '@/src/modules/title/components/bodyText';
+import {HomeBodyTextMobile} from '@/src/modules/title/components/bodyText';
 
 const TitlePageMobile: FC = () => {
   return (

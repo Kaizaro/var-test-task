@@ -1,4 +1,4 @@
-import {ButtonPrimaryMedium, IDefaultFC} from '@/src/shared';
+import {ButtonPrimaryMedium, IDefaultFC, URL_ROUTES, goToOtherUrl} from '@/src/shared';
 import React, {useCallback} from 'react';
 import {NewsPageHeader} from '../components/newsPageHeader/NewsPageHeader';
 import {NEWS_ARTICLES} from '../constants';
@@ -6,6 +6,10 @@ import {INewsArticle} from '../entities';
 import {NewsCardMobile} from '../components/newsCard';
 
 const NewsPageMobile: IDefaultFC = () => {
+  const handleLookNewsButtonPress = useCallback(() => {
+    goToOtherUrl(URL_ROUTES.NEWS);
+  }, []);
+
   const renderNewsArticle = useCallback<(newsArticleItem: INewsArticle, index: number) => React.JSX.Element>(
     (newsArticleItem, index) => {
       const key = `${newsArticleItem.title}_${index}`;
@@ -24,7 +28,7 @@ const NewsPageMobile: IDefaultFC = () => {
       <NewsPageHeader />
       <div className={'py-[64px]'}>{NEWS_ARTICLES.map((item, index) => renderNewsArticle(item, index))}</div>
       <div className="py-[64px] self-center items-center">
-        <ButtonPrimaryMedium>{'一覧を見る'}</ButtonPrimaryMedium>
+        <ButtonPrimaryMedium handleButtonPress={handleLookNewsButtonPress}>{'一覧を見る'}</ButtonPrimaryMedium>
       </div>
     </div>
   );
