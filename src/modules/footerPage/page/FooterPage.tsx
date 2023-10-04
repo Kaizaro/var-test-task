@@ -1,27 +1,11 @@
-import {IDefaultFC} from '@/src/shared';
-import React, {Suspense, lazy} from 'react';
-import {ContactsBlock, Copyright} from '../components';
+import React from 'react';
+import {IDefaultFC, useDeviceSize} from '@/src/shared';
+import {FooterPageMobile, FooterPagePC} from '..';
 
 const FooterPage: IDefaultFC = () => {
-  const NavigationBlock = lazy(() => import('../components/navigationBlock/NavigationBlock'));
+  const {isDesktop} = useDeviceSize();
 
-  return (
-    <div className="w-[100%] flex flex-col bg-black py-[80px] px-[16.67%]">
-      <div className="w-[100%] flex flex-row justify-between">
-        <div>
-          <ContactsBlock />
-        </div>
-        <div>
-          <Suspense>
-            <NavigationBlock />
-          </Suspense>
-        </div>
-      </div>
-      <div className="w-[100%] mt-10">
-        <Copyright />
-      </div>
-    </div>
-  );
+  return isDesktop ? <FooterPagePC /> : <FooterPageMobile />;
 };
 
 export default FooterPage;
