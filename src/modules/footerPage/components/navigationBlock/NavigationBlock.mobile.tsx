@@ -1,8 +1,16 @@
-import {ButtonPrimaryMedium, ButtonSecondaryMedium, IDefaultFC} from '@/src/shared';
+import {ButtonPrimaryMedium, ButtonSecondaryMedium, IDefaultFC, URL_ROUTES, goToOtherUrl} from '@/src/shared';
 import React, {useCallback} from 'react';
 import {INavigationBlockSectionItem, NAVIGATION_BLOCK_SECTIONS, NavigationBlockItem} from '.';
 
 const NavigationBlockMobile: IDefaultFC = () => {
+  const handleMainButtonPress = useCallback(() => {
+    goToOtherUrl(URL_ROUTES.CONTACT);
+  }, []);
+
+  const handleSecondaryButtonPress = useCallback(() => {
+    goToOtherUrl(URL_ROUTES.DOWNLOAD);
+  }, []);
+
   const renderNavigationSectionItem = useCallback<
     (sectionItem: INavigationBlockSectionItem, sectionItemIndex: number) => React.JSX.Element
   >((sectionItem, sectionItemIndex) => {
@@ -37,10 +45,12 @@ const NavigationBlockMobile: IDefaultFC = () => {
       </div>
       <div className="mt-6 items-center self-center">
         <div>
-          <ButtonPrimaryMedium>{'お問い合わせ'}</ButtonPrimaryMedium>
+          <ButtonPrimaryMedium handleButtonPress={handleMainButtonPress}>{'お問い合わせ'}</ButtonPrimaryMedium>
         </div>
         <div className="mt-2">
-          <ButtonSecondaryMedium>{'資料ダウンロード'}</ButtonSecondaryMedium>
+          <ButtonSecondaryMedium handleButtonPress={handleSecondaryButtonPress}>
+            {'資料ダウンロード'}
+          </ButtonSecondaryMedium>
         </div>
       </div>
     </div>
