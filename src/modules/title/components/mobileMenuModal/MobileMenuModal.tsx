@@ -19,7 +19,7 @@ const MobileMenuModal: IDefaultFC<IMobileMenuModal> = ({isVisible, handleCloseMe
     isVisible && (
       <div
         className={
-          'fixed top-0 bottom-0 right-0 left-0 w-[100%] h-[100%] bg-black px-[8.89%] py-[3.75%] flex flex-col'
+          'fixed z-20 top-0 bottom-0 right-0 left-0 w-[100%] h-[100%] bg-black px-[8.89%] py-[3.75%] flex flex-col'
         }>
         <div className="flex flex-row items-center justify-between">
           <Logo size={40} />
