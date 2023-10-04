@@ -1,2 +1,2 @@
-export * from './ServicePageHeader.constants';
-export * from './ServicePageHeader';
+export * from './NewsPageHeader.constants';
+export * from './NewsPageHeader';

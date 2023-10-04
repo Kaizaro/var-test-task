@@ -41,4 +41,4 @@ const ServicesPagePC: IDefaultFC = () => {
   );
 };
 
-export default ServicesPagePC;
+export {ServicesPagePC};

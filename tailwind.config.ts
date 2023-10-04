@@ -56,7 +56,7 @@ const config: Config = {
         'home-background-pc': "url('/pc/home_backround@3x.jpg')",
         'home-background-sp': "url('/sp/home_backround@3x.png')",
         'contact-background-pc': "url('/pc/contact@3x.jpg')",
-        'contact-background-sp': "url('/sp/contact@3x.jpg')",
+        'contact-background-sp': "url('/sp/contact@3x.png')",
       },
       spacing: {
         '96': '24rem',

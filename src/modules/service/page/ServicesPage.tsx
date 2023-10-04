@@ -1,11 +1,11 @@
 import React from 'react';
 import {IDefaultFC, useDeviceSize} from '@/src/shared';
-import {ContactsPageMobile, ContactsPagePC} from '..';
+import {ServicesPageMobile, ServicesPagePC} from '../content';
 
 const ServicePage: IDefaultFC = () => {
   const {isDesktop} = useDeviceSize();
 
-  return isDesktop ? <ContactsPagePC /> : <ContactsPageMobile />;
+  return isDesktop ? <ServicesPagePC /> : <ServicesPageMobile />;
 };
 
 export default ServicePage;

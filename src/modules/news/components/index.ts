@@ -1,1 +1,3 @@
-export * from './servicePageHeader';
+export * from './newsCard';
+export * from './newsCardBadge';
+export * from './newsPageHeader';
