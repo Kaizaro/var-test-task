@@ -14,4 +14,4 @@ const TitlePagePC: FC = () => {
   );
 };
 
-export default TitlePagePC;
+export {TitlePagePC};
