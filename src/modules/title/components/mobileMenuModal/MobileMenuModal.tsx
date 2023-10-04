@@ -1,4 +1,4 @@
-import {ButtonPrimaryLarge, ButtonSecondaryLarge, IDefaultFC, Logo, TextJABoldMD} from '@/src/shared';
+import {ButtonPrimaryLarge, ButtonSecondaryLarge, COLORS, IDefaultFC, Logo, TextJABoldMD} from '@/src/shared';
 import React, {useCallback} from 'react';
 import {HOME_HEADER_MENU_BUTTONS, IHomeHeaderMenuButton} from '..';
 import Image from 'next/image';
@@ -9,7 +9,7 @@ const MobileMenuModal: IDefaultFC<IMobileMenuModal> = ({isVisible, handleCloseMe
   const renderMenuItem = useCallback<(menuButtonItem: IHomeHeaderMenuButton, index: number) => React.JSX.Element>(
     (menuButtonItem, index) => (
       <a key={`${menuButtonItem.title}_${index}`} href={menuButtonItem.route} className={index === 0 ? '' : 'mt-6'}>
-        <TextJABoldMD>{menuButtonItem.title}</TextJABoldMD>
+        <TextJABoldMD color={COLORS.white}>{menuButtonItem.title}</TextJABoldMD>
       </a>
     ),
     [],
@@ -27,7 +27,7 @@ const MobileMenuModal: IDefaultFC<IMobileMenuModal> = ({isVisible, handleCloseMe
             <Image src={closeIcon} width={40} height={40} alt="close_icon" onClick={handleCloseMenu} />
           </button>
         </div>
-        <div className="mt-[6.25%]">
+        <div className="mt-[40%] flex flex-col">
           {HOME_HEADER_MENU_BUTTONS.map((menuButtonItem, index) => renderMenuItem(menuButtonItem, index))}
           <div className={'mt-10'}>
             <ButtonPrimaryLarge minWidth={'100%'} title={'お問い合わせ'} />
