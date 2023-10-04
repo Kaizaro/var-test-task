@@ -7,16 +7,14 @@ const FooterPage: IDefaultFC = () => {
 
   return (
     <div className="w-[100%] flex flex-col bg-black py-[80px] px-[16.67%]">
-      <div className="w-[100%] flex flex-row">
+      <div className="w-[100%] flex flex-row justify-between">
         <div>
           <ContactsBlock />
         </div>
         <div>
-          <div>
-            <Suspense>
-              <NavigationBlock />
-            </Suspense>
-          </div>
+          <Suspense>
+            <NavigationBlock />
+          </Suspense>
         </div>
       </div>
       <div className="w-[100%] mt-10">

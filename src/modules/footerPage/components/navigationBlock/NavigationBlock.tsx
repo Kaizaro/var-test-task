@@ -7,7 +7,12 @@ const NavigationBlock: IDefaultFC = () => {
     (sectionItem: INavigationBlockSectionItem, sectionItemIndex: number) => React.JSX.Element
   >((sectionItem, sectionItemIndex) => {
     const key = `${sectionItem.name}_${sectionItemIndex}`;
-    return <NavigationBlockItem key={key} {...sectionItem} />;
+    const className = sectionItemIndex === 0 ? '' : 'mt-[5px]';
+    return (
+      <div className={className}>
+        <NavigationBlockItem key={key} {...sectionItem} />
+      </div>
+    );
   }, []);
 
   const renderNavigationSection = useCallback<
@@ -15,19 +20,28 @@ const NavigationBlock: IDefaultFC = () => {
   >(
     (section, index) => {
       const key = `${index}`;
+      const className = index === 0 ? 'flex flex-col' : 'flex flex-col ml-[40px]';
       return (
-        <div key={key}>{section.map((item, sectionIndex) => renderNavigationSectionItem(item, sectionIndex))}</div>
+        <div key={key} className={className}>
+          {section.map((item, sectionIndex) => renderNavigationSectionItem(item, sectionIndex))}
+        </div>
       );
     },
     [renderNavigationSectionItem],
   );
 
   return (
-    <div>
-      <div>{NAVIGATION_BLOCK_SECTIONS.map((item, index) => renderNavigationSection(item, index))}</div>
-      <div className="mt-6">
-        <ButtonPrimaryMedium>{'お問い合わせ'}</ButtonPrimaryMedium>
-        <ButtonSecondaryMedium>{'資料ダウンロード'}</ButtonSecondaryMedium>
+    <div className="flex flex-col">
+      <div className="flex flex-row">
+        {NAVIGATION_BLOCK_SECTIONS.map((item, index) => renderNavigationSection(item, index))}
+      </div>
+      <div className="mt-6 items-end self-end flex flex-row">
+        <div>
+          <ButtonPrimaryMedium>{'お問い合わせ'}</ButtonPrimaryMedium>
+        </div>
+        <div className="ml-2">
+          <ButtonSecondaryMedium>{'資料ダウンロード'}</ButtonSecondaryMedium>
+        </div>
       </div>
     </div>
   );
