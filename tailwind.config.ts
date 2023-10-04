@@ -54,9 +54,9 @@ const config: Config = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         // background images
         'home-background-pc': "url('/pc/home_backround@3x.jpg')",
-        'home-background-sp': "url('/sp/home_backround.jpg')",
-        'contact-background-pc': "url('/pc/contact.jpg')",
-        'contact-background-sp': "url('/sp/contact.jpg')",
+        'home-background-sp': "url('/sp/home_backround@3x.jpg')",
+        'contact-background-pc': "url('/pc/contact@3x.jpg')",
+        'contact-background-sp': "url('/sp/contact@3x.jpg')",
       },
       spacing: {
         '96': '24rem',
