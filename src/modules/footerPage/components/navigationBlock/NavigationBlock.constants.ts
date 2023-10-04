@@ -1,96 +1,97 @@
+import {URL_ROUTES} from '@/src/shared';
 import {INavigationBlockSectionItem} from './NavigationBlock.types';
 
 export const NAVIGATION_BLOCK_SECTIONS = [
   [
     {
       name: 'サービス',
-      url: '',
+      url: URL_ROUTES.IT_RARETECH,
       isTitle: true,
     },
     {
       name: 'ITスクール RareTECH',
-      url: '',
+      url: URL_ROUTES.IT_RARETECH,
       isTitle: false,
     },
     {
       name: 'インフラ学習サービス エンベーダー',
-      url: '',
+      url: URL_ROUTES.ENBEDDER,
       isTitle: false,
     },
     {
       name: 'システム・アプリケーション開発',
-      url: '',
+      url: URL_ROUTES.SYSTEM_APP,
       isTitle: false,
     },
     {
       name: 'Web制作',
-      url: '',
+      url: URL_ROUTES.WEB_PRODUCTION,
       isTitle: false,
     },
   ],
   [
     {
       name: '企業情報',
-      url: '',
+      url: URL_ROUTES.COMPANY,
       isTitle: true,
     },
     {
       name: 'ミッション',
-      url: '',
+      url: URL_ROUTES.COMPANY,
       isTitle: false,
     },
     {
       name: 'ビジョン',
-      url: '',
+      url: URL_ROUTES.COMPANY,
       isTitle: false,
     },
     {
       name: 'バリュー',
-      url: '',
+      url: URL_ROUTES.COMPANY,
       isTitle: false,
     },
     {
       name: '役員一覧',
-      url: '',
+      url: URL_ROUTES.COMPANY,
       isTitle: false,
     },
     {
       name: '会社概要',
-      url: '',
+      url: URL_ROUTES.COMPANY,
       isTitle: false,
     },
   ],
   [
     {
       name: '採用情報',
-      url: '',
+      url: URL_ROUTES.RECRUIT,
       isTitle: true,
     },
     {
       name: '代表メッセージ',
-      url: '',
+      url: URL_ROUTES.RECRUIT,
       isTitle: false,
     },
     {
       name: '募集要項',
-      url: '',
+      url: URL_ROUTES.RECRUIT,
       isTitle: false,
     },
   ],
   [
     {
       name: 'お知らせ',
-      url: '',
+      url: URL_ROUTES.NEWS,
       isTitle: true,
     },
     {
       name: 'サステナビリティ',
-      url: '',
+      url: URL_ROUTES.SUSTANIBILITY,
       isTitle: true,
     },
     {
       name: 'プライバシーポリシー',
-      url: '',
+      url: URL_ROUTES.COMPANY,
       isTitle: true,
     },
   ],

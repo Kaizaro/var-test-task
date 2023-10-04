@@ -7,11 +7,11 @@ export const COMPANY_INFO = {
   links: [
     {
       text: 'Twitter',
-      url: '',
+      url: 'https://twitter.com/RaretechO',
     },
     {
       text: 'Zenn',
-      url: '',
+      url: 'https://zenn.dev/var',
     },
   ],
 } as ICompanyInfo;
