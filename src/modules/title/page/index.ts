@@ -1,1 +1,1 @@
-export * from './titlePagePC';
+export * from './titlePage';

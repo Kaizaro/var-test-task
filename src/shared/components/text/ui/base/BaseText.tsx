@@ -4,7 +4,7 @@ import React, {CSSProperties, useMemo} from 'react';
 const BaseText: IDefaultFC<IText> = ({text = 'テキスト', ...props}) => {
   const textStyle = useMemo(() => {
     let defaultStyle = {
-      display: 'inline'
+      display: 'inline',
     } as CSSProperties;
     if (props.color) {
       defaultStyle.color = props.color;
@@ -18,9 +18,9 @@ const BaseText: IDefaultFC<IText> = ({text = 'テキスト', ...props}) => {
     if (props.fontWeight) {
       defaultStyle.fontWeight = props.fontWeight;
     }
-    if (props.lineHeight) {
-      defaultStyle.lineHeight = props.lineHeight;
-    }
+    // if (props.lineHeight) {
+    //   defaultStyle.lineHeight = props.lineHeight;
+    // }
     if (props.letterSpacing) {
       defaultStyle.letterSpacing = props.letterSpacing;
     }
@@ -28,14 +28,20 @@ const BaseText: IDefaultFC<IText> = ({text = 'テキスト', ...props}) => {
       defaultStyle.textDecorationLine = 'underline';
     }
     if (props.customStyle) {
-      defaultStyle = {...defaultStyle, ...props.customStyle}
+      defaultStyle = {...defaultStyle, ...props.customStyle};
     }
     return defaultStyle;
-  }, [props.color, props.fontFamily, props.fontWeight, props.isUnderlined, props.letterSpacing, props.lineHeight, props.size, props.customStyle]);
+  }, [
+    props.color,
+    props.fontFamily,
+    props.fontWeight,
+    props.isUnderlined,
+    props.letterSpacing,
+    props.size,
+    props.customStyle,
+  ]);
 
-  return (
-    <p style={textStyle}>{props.children ?? text}</p>
-  );
+  return <p style={textStyle}>{props.children ?? text}</p>;
 };
 
 export {BaseText};

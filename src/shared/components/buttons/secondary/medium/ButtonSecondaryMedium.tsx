@@ -4,7 +4,7 @@ import {BaseButtonSecondary, IButton, IDefaultFC, TextJABoldMD} from '@/src/shar
 const ButtonSecondaryMedium: IDefaultFC<IButton> = (props) => {
   return (
     <BaseButtonSecondary size={'medium'} minWidth={320} paddingVertical={16} paddingHorizontal={32} {...props}>
-      <TextJABoldMD>{props.title}</TextJABoldMD>
+      <TextJABoldMD>{props.children ?? props.title}</TextJABoldMD>
     </BaseButtonSecondary>
   );
 };

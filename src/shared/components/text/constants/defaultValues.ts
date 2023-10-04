@@ -1,2 +1,2 @@
 export const DEFAULT_LINE_HEIGHT_MULTIPLY = 1.5;
-export const DEFAULT_LETTER_SPACING = 0.04;
+export const DEFAULT_LETTER_SPACING = 4;
