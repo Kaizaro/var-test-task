@@ -5,6 +5,7 @@ export default function Home() {
   const ServicePageContent = lazy(() => import('../src/modules/service/page/ServicesPC'));
   const NewsPageContent = lazy(() => import('../src/modules/news/page/NewsPage'));
   const ContactsPageContent = lazy(() => import('../src/modules/contacts/page/ContactsPage'));
+  const FooterPageContent = lazy(() => import('../src/modules/footerPage/page/FooterPage'));
 
   return (
     <main className="flex flex-col w-[100%]">
@@ -20,6 +21,9 @@ export default function Home() {
       </Suspense>
       <Suspense>
         <ContactsPageContent />
+      </Suspense>
+      <Suspense>
+        <FooterPageContent />
       </Suspense>
     </main>
   );
